@@ -20,7 +20,8 @@ namespace PGS.Azure.Storage.Table
 
             try
             {
-                InsertExample.InsertEntities(tableReference).GetAwaiter().GetResult();
+//                InsertExample.InsertEntities(tableReference).GetAwaiter().GetResult();
+                BulkInsertExample.InsertAllSamples(tableReference).GetAwaiter().GetResult();
             }
             catch (StorageException e)
             {
