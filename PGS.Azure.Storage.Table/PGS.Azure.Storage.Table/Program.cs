@@ -6,7 +6,6 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 using PGS.Azure.Storage.Table.Configuration;
-using PGS.Azure.Storage.Table.DataSamples;
 using PGS.Azure.Storage.Table.Examples;
 
 namespace PGS.Azure.Storage.Table
