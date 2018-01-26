@@ -40,8 +40,12 @@ namespace PGS.Azure.Storage.Table
         {
             var storageAccount = new CloudStorageAccount(new StorageCredentials(storageAccountOptions.Name, storageAccountOptions.Key), true);
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
-            CloudTable tableReference = tableClient.GetTableReference(storageAccountOptions.TableName);
+            string tableName = $"{storageAccountOptions.TableName}{new Random().Next()}";
+            CloudTable tableReference = tableClient.GetTableReference(tableName);
             await tableReference.CreateIfNotExistsAsync();
+
+            Console.WriteLine($"Using table '{tableName}'");
+
             return tableReference;
         }
 
